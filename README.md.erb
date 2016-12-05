@@ -1,5 +1,10 @@
 # Administrate::Field::Plugins
 
+<% gems.each do |gem| %>
+## <%= gem['name'] %>
+<% if gem['info'] != '' %>* <%= gem['info'] %><% end %>
+<% if gem['homepage_uri'] != '' %>* <%= gem['homepage_uri'] %><% end %>
+<% end %>
 
 ## Installation
 
