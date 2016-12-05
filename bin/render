@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "gems"
+require "erb"
+
+gems = Gems.search('administrate-field-')
+
+filename = 'README.md.erb'
+erb = ERB.new(File.read(filename))
+erb.filename = filename
+result = erb.result(binding)
+
+File.write('README.md', result)
